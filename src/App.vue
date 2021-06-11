@@ -1,21 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <header>
+    <img alt="Vue logo" src="./assets/img/logo.png">
+    <h1>Vue utilities</h1>
+  </header>
+  <main>
+    <CounterExample />
+  </main>
 </template>
 
 <script>
+import CounterExample from './examples/CounterExample';
 
 export default {
   name: 'App',
+  components: {
+    CounterExample
+  }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
