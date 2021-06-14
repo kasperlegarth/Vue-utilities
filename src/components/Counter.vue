@@ -14,12 +14,15 @@ export default {
         return {
             value: 0,
             hasError: false,
+            initDone: false,
         }
     },
     created() {
         if(this.init) {
             this.value = this.init
         }
+
+        this.initDone = true;
     },
     methods: {
         substract() {
@@ -50,6 +53,13 @@ export default {
             setTimeout(() => {
                 this.hasError = false;
             }, 1000);
+        }
+    },
+    watch: {
+        value(newValue, oldValue) {
+            if(this.initDone) {
+                this.$emit('valueUpdate', newValue)    
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    background-color: $background-color;
 }
 
 header {
@@ -24,6 +25,54 @@ main {
     margin: 0 auto;
     padding: 0 20px;
     max-width: 900px;
+
+    .example {
+        display: flex;
+        padding: 30px 0 0 30px;
+        background-color: white;
+        border-radius: 5px;
+        flex-direction: column;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.06);
+
+        @media(min-width: 768px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        pre {
+            margin: 0;
+        }
+
+        .code {
+            margin: 0 0 10vh;
+            @media (min-width: 768px) {
+                margin: 0;
+                width: 75%;
+            }
+
+            .hljs {
+                padding: 20px;
+                font-size: 16px;
+                border-radius: 6px;
+            }
+        }
+
+        .component {
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0 0;
+            width: 25%;
+            align-items: center;
+
+            > div {
+                margin: 0 0 20px;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+    }
 }
 
 /* Components */
